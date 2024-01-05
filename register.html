@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="style.css">
+
+    </head>
+<header>
+    <nav>
+      <div class="logo">LeetCode</div>
+<div>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+    </div>
+
+    <div class="user-profile" id="userProfile">
+        <!-- Content for when the user is not logged in -->
+        <button class="login-btn" onclick="login()">Login</button>
+        <a class="register-btn" href="register.html">Register</a>
+    </div>
+</nav>
+
+</header>
+<body>
+
+<div class="register-container">
+    <h2>Register</h2>
+    <form class="register-form">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function login() {
+        // Simulate successful login
+        const userProfile = document.getElementById('userProfile');
+        userProfile.innerHTML = `
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+            <div class="dropdown">
+                <button class="logout-btn" onmouseover="toggleDropdown()">Profile</button>
+                <div class="dropdown-content">
+                    <a href="info.html">Info</a>
+                    <a href="mycourses.html">My Courses</a>
+                    <a href="joinedcourses.html">Joined Courses</a>
+                </div>
+            </div>
+        `;
+
+
+    }
+function toggleDropdown() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.classList.toggle('show');
+} 
+    function logout() {
+        // Simulate logout
+        window.location.reload();
+    }
+</script>
+
+</body>
+
+
+</html>

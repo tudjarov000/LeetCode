@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+      <div class="logo">LeetCode</div>
+<div>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+    </div>
+
+    <div class="user-profile" id="userProfile">
+        <!-- Content for when the user is not logged in -->
+        <button class="login-btn" onclick="login()">Login</button>
+        <a class="register-btn" href="register.html">Register</a>
+    </div>
+</nav>
+
+</header>
+
+<main>
+    <section class="profile-info">
+        <h1>User Profile</h1>
+        <div class="user-details">
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Email:</strong> john.doe@example.com</p>
+            <p><strong>Username:</strong> johndoe123</p>
+            <p><strong>Joined:</strong> January 1, 2023</p>
+        </div>
+    </section>
+</main>
+<script>
+    
+    function login() {
+        // Simulate successful login
+        const userProfile = document.getElementById('userProfile');
+        userProfile.innerHTML = `
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+            <div class="dropdown">
+                <button class="logout-btn" onmouseover="toggleDropdown()">Profile</button>
+                <div class="dropdown-content">
+                    <a href="info.html">Info</a>
+                    <a href="mycourses.html">My Courses</a>
+                    <a href="joinedcourses.html">Joined Courses</a>
+                </div>
+            </div>
+        `;
+
+
+    }
+function toggleDropdown() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.classList.toggle('show');
+} 
+    function logout() {
+        // Simulate logout
+        window.location.reload();
+    }
+
+</script>
+
+</body>
+</html>

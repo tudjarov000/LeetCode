@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+       </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+      <div class="logo">LeetCode</div>
+<div>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+    </div>
+
+    <div class="user-profile" id="userProfile">
+        <!-- Content for when the user is not logged in -->
+        <button class="login-btn" onclick="login()">Login</button>
+        <a class="register-btn" href="register.html">Register</a>
+    </div>
+</nav>
+
+<!-- Other content of your website goes here -->
+
+<script>
+    function login() {
+        // Simulate successful login
+        const userProfile = document.getElementById('userProfile');
+        userProfile.innerHTML = `
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+            <div class="dropdown">
+                <button class="logout-btn" onmouseover="toggleDropdown()">Profile</button>
+                <div class="dropdown-content">
+                    <a href="info.html">Info</a>
+                    <a href="mycourses.html">My Courses</a>
+                    <a href="joinedcourses.html">Joined Courses</a>
+                </div>
+            </div>
+        `;
+
+
+    }
+function toggleDropdown() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.classList.toggle('show');
+} 
+    function logout() {
+        // Simulate logout
+        window.location.reload();
+    }
+
+</script>
+
+</body>
+</html>
